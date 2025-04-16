@@ -20,7 +20,7 @@ export function BoardTabs() {
             href={board.slug}
             className={`px-4 py-3 font-medium text-sm inline-flex items-center whitespace-nowrap transition-colors border-b-2 ${
               isActive(board.slug)
-                ? 'text-blue-600 border-blue-600'
+                ? 'text-[#419F5A] border-[#419F5A]'
                 : 'text-gray-600 border-transparent hover:text-gray-900 hover:border-gray-300'
             }`}
           >

@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import MobileMenu from './mobile-menu';
 import { useEffect, useState } from 'react';
@@ -36,8 +37,14 @@ export default function Navbar() {
       }`}
     >
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        <Link href="/">
-          <h1 className="text-xl font-bold">마포동네</h1>
+        <Link href="/" className="flex items-center">
+          <Image
+            src="/moa_logo.svg"
+            alt="마포동네 로고"
+            width={60}
+            height={60}
+            priority
+          />
         </Link>
 
         <div className="flex items-center gap-4">

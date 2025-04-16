@@ -357,7 +357,7 @@ export default function WritePage() {
             disabled={!isFormValid}
             className={`px-6 shadow-none ${
               isFormValid
-                ? 'bg-blue-600 hover:bg-blue-700'
+                ? 'bg-[#419F5A] hover:bg-[#357b47]'
                 : 'bg-gray-200 text-gray-500 cursor-not-allowed'
             }`}
           >
