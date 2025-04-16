@@ -65,14 +65,8 @@ export default function WritePage() {
     };
   }, []);
 
-  // Hide board tabs and footer
+  // Hide footer
   useEffect(() => {
-    // Hide board tabs
-    const boardTabs = document.querySelector('[data-component="board-tabs"]');
-    if (boardTabs) {
-      boardTabs.classList.add('hidden');
-    }
-
     // Hide footer - using display:none for more reliable hiding
     const footer = document.querySelector('footer');
     if (footer) {
@@ -80,9 +74,6 @@ export default function WritePage() {
     }
 
     return () => {
-      if (boardTabs) {
-        boardTabs.classList.remove('hidden');
-      }
       if (footer) {
         footer.style.display = '';
       }

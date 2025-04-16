@@ -10,30 +10,22 @@ export function cn(...inputs: ClassValue[]) {
  */
 export function formatRelativeTime(date: Date): string {
   const now = new Date();
-  const diffInMs = now.getTime() - date.getTime();
-  const diffInSec = Math.floor(diffInMs / 1000);
-  const diffInMin = Math.floor(diffInSec / 60);
-  const diffInHour = Math.floor(diffInMin / 60);
-  const diffInDay = Math.floor(diffInHour / 24);
+  const diff = now.getTime() - date.getTime();
+  const diffMin = Math.floor(diff / (1000 * 60));
+  const diffHour = Math.floor(diff / (1000 * 60 * 60));
+  const diffDay = Math.floor(diff / (1000 * 60 * 60 * 24));
 
-  if (diffInSec < 60) {
-    return '방금 전';
-  } else if (diffInMin < 60) {
-    return `${diffInMin}분 전`;
-  } else if (diffInHour < 24) {
-    return `${diffInHour}시간 전`;
-  } else if (diffInDay === 1) {
-    return '어제';
-  } else if (diffInDay < 7) {
-    return `${diffInDay}일 전`;
-  } else if (diffInDay < 30) {
-    const weeks = Math.floor(diffInDay / 7);
-    return `${weeks}주 전`;
-  } else if (diffInDay < 365) {
-    const months = Math.floor(diffInDay / 30);
-    return `${months}개월 전`;
+  if (diffMin < 60) {
+    return `${diffMin}분 전`;
+  } else if (diffHour < 24) {
+    return `${diffHour}시간 전`;
+  } else if (diffDay < 7) {
+    return `${diffDay}일 전`;
   } else {
-    const years = Math.floor(diffInDay / 365);
-    return `${years}년 전`;
+    return date.toLocaleDateString('ko-KR', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric',
+    });
   }
 }

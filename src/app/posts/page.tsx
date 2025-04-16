@@ -16,7 +16,7 @@ export default function PostsPage({ searchParams }: PageProps) {
   return (
     <div className="container mx-auto px-4 max-w-5xl py-6">
       <div className="mt-5 mb-8">
-        <h1 className="text-3xl font-bold mb-2">전체 게시글</h1>
+        <h1 className="text-3xl font-bold mb-2">전체 피드</h1>
         <p className="text-gray-600 text-sm">
           마포동네 커뮤니티의 모든 게시글을 확인할 수 있습니다
         </p>

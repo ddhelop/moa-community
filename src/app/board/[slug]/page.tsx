@@ -1,6 +1,5 @@
 import { PostList } from '@/components/post/post-list';
 import { Metadata } from 'next';
-import { BoardTabs } from '@/components/board/board-tabs';
 
 // 게시판 정보
 const BOARD_INFO: Record<string, { title: string; description: string }> = {
@@ -23,6 +22,22 @@ const BOARD_INFO: Record<string, { title: string; description: string }> = {
   news: {
     title: '동네소식',
     description: '마포구 내 지역 소식과 행사 정보를 알려드립니다.',
+  },
+  request: {
+    title: '발은 요청',
+    description: '주변 이웃에게 도움을 요청하는 공간입니다.',
+  },
+  jobs: {
+    title: '채용',
+    description: '마포구 내 채용 정보를 공유하는 공간입니다.',
+  },
+  makers: {
+    title: '메이커 찾기',
+    description: '다양한 분야의 메이커를 찾고 협업할 수 있습니다.',
+  },
+  clubs: {
+    title: '클럽',
+    description: '관심사가 비슷한 이웃들과 함께하는 모임입니다.',
   },
 };
 
@@ -59,8 +74,6 @@ export default function BoardPage({
 
   return (
     <div className="container mx-auto py-6 px-4 sm:px-6">
-      <BoardTabs />
-
       <div className="mt-5">
         <h1 className="text-3xl font-bold mb-2">{boardInfo.title}</h1>
         <p className="text-gray-600 mb-6">{boardInfo.description}</p>
