@@ -18,7 +18,6 @@
 - **Frontend**: Next.js, React, TypeScript, TailwindCSS
 - **UI 컴포넌트**: Shadcn UI
 - **아이콘**: Lucide React
-- **개발 방법론**: Vibe Coding (직관적인 코드 구조와 사용자 경험 중심)
 
 ## 프로젝트 구조
 
@@ -45,37 +44,10 @@ git clone [repository-url]
 cd moa
 
 # 의존성 설치
-npm install
+pnpm install
 
 # 개발 서버 실행
-npm run dev
+pnpm run dev
 ```
 
-## 바이브코딩 접근법
 
-이 프로젝트는 바이브코딩 방법론을 적극적으로 활용했습니다. 바이브코딩은 직관적인 코드 구조와 사용자 경험에 중점을 둔 개발 접근법으로, 다음과 같은 특징이 있습니다:
-
-- **사용자 중심 설계**: 사용자의 니즈와 경험을 최우선으로 고려
-- **직관적인 컴포넌트 구조**: 이해하기 쉽고 유지보수가 용이한 컴포넌트 설계
-- **효율적인 상태 관리**: 상태를 효과적으로 관리하여 성능 최적화
-- **반응형 디자인 우선**: 다양한 디바이스에서 일관된 경험 제공
-
-## 기여하기
-
-프로젝트에 기여하고 싶으시다면:
-
-1. 이 저장소를 포크하세요.
-2. 새로운 기능 브랜치를 생성하세요 (`git checkout -b feature/amazing-feature`)
-3. 변경사항을 커밋하세요 (`git commit -m 'Add some amazing feature'`)
-4. 브랜치에 푸시하세요 (`git push origin feature/amazing-feature`)
-5. Pull Request를 생성하세요.
-
-## 라이센스
-
-이 프로젝트는 MIT 라이센스 하에 배포됩니다.
-
-## 연락처
-
-프로젝트 관리자 - [이메일 주소]
-
-프로젝트 링크: [GitHub Repository URL]
