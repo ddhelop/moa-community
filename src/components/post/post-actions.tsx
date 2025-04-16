@@ -35,7 +35,7 @@ export function PostActions({ initialLikes, commentsCount }: PostActionsProps) {
         <span className="font-medium">{likes}</span>
       </button>
 
-      <button className="flex items-center text-gray-700 hover:text-blue-500 transition-colors">
+      <button className="flex items-center text-gray-700 hover:text-[#419F5A] transition-colors">
         <MessageCircle className="w-6 h-6 mr-1.5" />
         <span className="font-medium">{commentsCount}</span>
       </button>

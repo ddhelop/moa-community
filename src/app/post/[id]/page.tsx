@@ -105,7 +105,7 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
       {/* 뒤로가기 링크 */}
       <Link
         href={`/board/${post.boardSlug}`}
-        className="inline-flex items-center mb-6 text-gray-600 hover:text-blue-600"
+        className="inline-flex items-center mb-6 text-gray-600 hover:text-[#419F5A]"
       >
         <ArrowLeft className="w-4 h-4 mr-1" />
         {post.boardName}으로 돌아가기
@@ -113,7 +113,7 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
 
       {/* 게시글 헤더 */}
       <div className="pb-4 mb-6">
-        <span className="inline-block px-2.5 py-1 rounded-md text-xs font-medium bg-blue-50 text-blue-600 border border-blue-100 mb-3">
+        <span className="inline-block px-2.5 py-1 rounded-md text-xs font-medium bg-[#419F5A]/10 text-[#419F5A] border border-[#419F5A]/20 mb-3">
           {post.boardName}
         </span>
         <h1 className="text-2xl font-bold text-gray-900 mb-3">{post.title}</h1>
