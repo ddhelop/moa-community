@@ -18,6 +18,12 @@ export function Pagination({
 
   // 페이지 URL 생성 함수
   const createPageUrl = (page: number) => {
+    // 기존 URL에 이미 쿼리 파라미터가 있는지 확인
+    if (basePath.includes('?')) {
+      // 이미 쿼리 파라미터가 있는 경우 & 로 구분
+      return `${basePath}&page=${page}`;
+    }
+    // 쿼리 파라미터가 없는 경우 ? 로 시작
     return `${basePath}?page=${page}`;
   };
 

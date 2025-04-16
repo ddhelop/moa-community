@@ -511,28 +511,34 @@ export function PostList({
   showBoardName = false,
   currentPage = 1,
 }: PostListProps) {
-  // 페이지당 게시물 수
-  const ITEMS_PER_PAGE = 15;
+  // 페이지당 항목 수
+  const ITEMS_PER_PAGE = 10;
 
-  // 해당 게시판의 게시물 필터링
+  // 모든 게시물 가져오기
+  const allPosts = [
+    ...MOCK_POSTS,
+    ...generateMoreMockPosts(),
+    ...generateMoreFoodPosts(),
+    ...generateMoreHotPosts(),
+  ];
+
+  // 게시판별 필터링
   const filteredPosts = boardSlug
-    ? MOCK_POSTS.filter((post) => post.boardSlug === boardSlug)
-    : MOCK_POSTS;
+    ? allPosts.filter((post) => post.boardSlug === boardSlug)
+    : allPosts;
 
-  // 전체 게시물 수
-  const totalItems = filteredPosts.length;
-
-  // 현재 페이지에 표시할 게시물
+  // 페이지네이션
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentPosts = filteredPosts.slice(startIndex, endIndex);
+  const currentPagePosts = filteredPosts.slice(startIndex, endIndex);
+  const totalPages = Math.ceil(filteredPosts.length / ITEMS_PER_PAGE);
 
   // 광고 선택 (게시판 별로 다른 광고 표시)
   const adIndex = boardSlug === 'food' ? 1 : 0;
   const adPost = AD_POSTS[adIndex];
 
   // 페이지네이션 기본 경로 설정
-  const basePath = boardSlug ? `/board/${boardSlug}` : '/posts';
+  const basePath = boardSlug ? `/posts?board=${boardSlug}` : '/posts';
 
   if (filteredPosts.length === 0) {
     return (
@@ -549,7 +555,7 @@ export function PostList({
         </div>
 
         {/* 일반 게시글 표시 */}
-        {currentPosts.map((post) => (
+        {currentPagePosts.map((post) => (
           <div key={post.id}>
             <PostCard
               {...post}
@@ -560,10 +566,10 @@ export function PostList({
       </div>
 
       {/* 페이지네이션 */}
-      {totalItems > ITEMS_PER_PAGE && (
+      {totalPages > 1 && (
         <div className="mt-8 mb-12">
           <Pagination
-            totalItems={totalItems}
+            totalItems={filteredPosts.length}
             itemsPerPage={ITEMS_PER_PAGE}
             currentPage={currentPage}
             basePath={basePath}

@@ -1,10 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    turbo: {
-      rules: {
-        // Add custom turbo rules here
-      },
+  turbopack: {
+    rules: {
+      // Add custom turbo rules here
     },
   },
   images: {

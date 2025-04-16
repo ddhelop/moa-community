@@ -82,10 +82,17 @@ const MOCK_COMMENTS = [
   },
 ];
 
-export default function PostDetailPage({ params }: { params: { id: string } }) {
-  const post = MOCK_POSTS.find((post) => post.id === params.id) as
-    | Post
-    | undefined;
+// Next.js 15에서 요구하는 타입
+interface PostPageProps {
+  params: Promise<{ id: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}
+
+export default async function PostDetailPage(props: PostPageProps) {
+  const params = await props.params;
+  const { id } = params;
+
+  const post = MOCK_POSTS.find((post) => post.id === id) as Post | undefined;
 
   if (!post) {
     notFound();
@@ -104,7 +111,7 @@ export default function PostDetailPage({ params }: { params: { id: string } }) {
     <div className="container max-w-4xl mx-auto py-6 px-4 sm:px-6">
       {/* 뒤로가기 링크 */}
       <Link
-        href={`/board/${post.boardSlug}`}
+        href={`/posts?board=${post.boardSlug}`}
         className="inline-flex items-center mb-6 text-gray-600 hover:text-[#419F5A]"
       >
         <ArrowLeft className="w-4 h-4 mr-1" />
