@@ -61,14 +61,14 @@ function SideNavContent() {
         className="py-6 group hover:w-48 transition-all duration-300 overflow-visible relative"
         style={{ width: 'inherit' }}
       >
-        <div className="px-4 w-16 absolute left-0 top-0 flex justify-center items-center h-[72px]">
-          <Link href="/" className="flex items-center justify-center">
-            <div className="w-8 h-8 flex-shrink-0">
+        <div className="px-4 w-16 absolute left-0 top-0 flex justify-start items-center h-[72px]">
+          <Link href="/" className="flex items-center">
+            <div className="w-[58px] h-[58px] flex-shrink-0">
               <Image
-                src="/moa_logo.svg"
+                src="/logo_text.svg"
                 alt="마포동네 로고"
-                width={32}
-                height={32}
+                width={100}
+                height={100}
                 className="w-full h-full"
                 priority
               />
@@ -89,15 +89,15 @@ function SideNavContent() {
                 href={item.href}
                 className={`flex items-center px-4 py-2.5 text-[13px] transition-colors group/item ${
                   isActive(item.href)
-                    ? 'text-[#2A7940] font-semibold'
-                    : 'text-gray-400 hover:text-[#419F5A]'
+                    ? 'text-[#111111] font-semibold'
+                    : 'text-gray-400 hover:text-[#1E1E1E]'
                 }`}
               >
                 <item.icon
                   className={`w-5 h-5 flex-shrink-0 transition-colors ${
                     isActive(item.href)
-                      ? 'text-[#2A7940] stroke-[2px]'
-                      : 'text-gray-300 group-hover/item:text-[#419F5A]'
+                      ? 'text-[#111111] stroke-[2px]'
+                      : 'text-gray-300 group-hover/item:text-[#1E1E1E]'
                   }`}
                 />
                 <span className="ml-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
@@ -111,9 +111,9 @@ function SideNavContent() {
           <li>
             <Link
               href="/write"
-              className="flex items-center px-4 py-2.5 text-[13px] transition-colors group/item text-gray-400 hover:text-[#419F5A]"
+              className="flex items-center px-4 py-2.5 text-[13px] transition-colors group/item text-gray-400 hover:text-[#1E1E1E]"
             >
-              <PenSquare className="w-5 h-5 flex-shrink-0 transition-colors text-gray-300 group-hover/item:text-[#419F5A]" />
+              <PenSquare className="w-5 h-5 flex-shrink-0 transition-colors text-gray-300 group-hover/item:text-[#1E1E1E]" />
               <span className="ml-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                 글쓰기
               </span>
@@ -129,7 +129,7 @@ function SideNavContent() {
       >
         <Link
           href="/profile"
-          className="flex items-center text-[13px] transition-colors hover:text-[#419F5A] group/item"
+          className="flex items-center text-[13px] transition-colors hover:text-[#1E1E1E] group/item"
         >
           <div className="w-5 h-5 rounded-full bg-gray-200 flex-shrink-0 overflow-hidden">
             <Image

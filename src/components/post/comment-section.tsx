@@ -89,8 +89,8 @@ export function CommentSection({ comments }: CommentSectionProps) {
   const getReplyButtonClasses = (isActive: boolean) =>
     `flex items-center rounded-md px-2 py-1 ${
       isActive
-        ? 'text-[#419F5A] bg-[#419F5A]/10 font-medium'
-        : 'text-gray-500 hover:text-[#419F5A] hover:bg-gray-50'
+        ? 'text-gray-900 bg-gray-100 font-medium'
+        : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
     }`;
 
   return (
@@ -99,7 +99,7 @@ export function CommentSection({ comments }: CommentSectionProps) {
       <div className="mb-6">
         <form onSubmit={handleCommentSubmit}>
           <textarea
-            className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-[#419F5A] focus:border-transparent"
+            className="w-full border border-gray-300 rounded-md p-3 text-sm focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
             rows={3}
             placeholder="댓글을 입력하세요..."
             value={commentText}
@@ -108,7 +108,7 @@ export function CommentSection({ comments }: CommentSectionProps) {
           <div className="flex justify-end mt-2">
             <button
               type="submit"
-              className="px-4 py-2 text-sm font-medium text-white bg-[#419F5A] rounded-md hover:bg-[#357b47] focus:outline-none focus:ring-2 focus:ring-[#419F5A] focus:ring-offset-2"
+              className="px-4 py-2 text-sm font-medium text-white bg-gray-700 rounded-md hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2"
             >
               댓글 작성
             </button>
@@ -183,7 +183,7 @@ export function CommentSection({ comments }: CommentSectionProps) {
                     <div className="mt-3">
                       <form onSubmit={(e) => handleReplySubmit(e, comment.id)}>
                         <textarea
-                          className="w-full border border-gray-200 rounded-md p-2 text-xs focus:outline-none focus:ring-2 focus:ring-[#419F5A] focus:border-transparent"
+                          className="w-full border border-gray-200 rounded-md p-2 text-xs focus:outline-none focus:ring-2 focus:ring-gray-500 focus:border-transparent"
                           rows={2}
                           placeholder="답글을 입력하세요..."
                           value={replyText}
@@ -199,7 +199,7 @@ export function CommentSection({ comments }: CommentSectionProps) {
                           </button>
                           <button
                             type="submit"
-                            className="px-3 py-1 text-xs text-white bg-[#419F5A] rounded-md hover:bg-[#357b47]"
+                            className="px-3 py-1 text-xs text-white bg-gray-700 rounded-md hover:bg-gray-800"
                           >
                             등록
                           </button>

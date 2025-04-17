@@ -68,7 +68,7 @@ export function Pagination({
           href={createPageUrl(page)}
           className={`w-9 h-9 flex items-center justify-center rounded-md ${
             page === currentPage
-              ? 'bg-[#419F5A] text-white font-medium'
+              ? 'bg-gray-800 text-white font-medium'
               : 'hover:bg-gray-100 text-gray-700'
           }`}
           aria-label={`${page} 페이지`}

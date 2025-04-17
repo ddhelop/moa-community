@@ -112,7 +112,7 @@ export default async function PostDetailPage(props: PostPageProps) {
       {/* 뒤로가기 링크 */}
       <Link
         href={`/posts?board=${post.boardSlug}`}
-        className="inline-flex items-center mb-6 text-gray-600 hover:text-[#419F5A]"
+        className="inline-flex items-center mb-6 text-gray-600 hover:text-gray-900"
       >
         <ArrowLeft className="w-4 h-4 mr-1" />
         {post.boardName}으로 돌아가기
@@ -120,7 +120,7 @@ export default async function PostDetailPage(props: PostPageProps) {
 
       {/* 게시글 헤더 */}
       <div className="pb-4 mb-6">
-        <span className="inline-block px-2.5 py-1 rounded-md text-xs font-medium bg-[#419F5A]/10 text-[#419F5A] border border-[#419F5A]/20 mb-3">
+        <span className="inline-block px-2.5 py-1 rounded-md text-xs font-medium bg-gray-100 text-gray-700 border border-gray-200 mb-3">
           {post.boardName}
         </span>
         <h1 className="text-2xl font-bold text-gray-900 mb-3">{post.title}</h1>

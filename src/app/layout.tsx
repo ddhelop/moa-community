@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   title: '마포동네',
   description: '우리 동네의 이야기를, 우리끼리 나누는 곳',
   icons: {
-    icon: '/moa_logo.svg',
-    apple: '/moa_logo.svg',
+    icon: '/logo.svg',
+    apple: '/logo.svg',
   },
 };
 
@@ -47,7 +47,7 @@ export default async function RootLayout({
             <div className="container mx-auto px-4">
               <p>© 2024 마포동네 커뮤니티</p>
               <p className="mt-2">
-                <a href="#" className="text-green-600 hover:underline">
+                <a href="#" className="text-gray-600 hover:underline">
                   💻 지역 확장을 위한 서버비 후원하기
                 </a>
               </p>

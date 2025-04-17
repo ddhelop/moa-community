@@ -63,12 +63,12 @@ function MobileNavContent() {
     <div className="bg-white border-b px-4 py-3 flex justify-between items-center">
       {/* 로고 */}
       <Link href="/" className="flex items-center">
-        <div className="w-10 h-10 flex-shrink-0">
+        <div className="w-17 h-17 flex-shrink-0">
           <Image
-            src="/moa_logo.svg"
+            src="/logo_text.svg"
             alt="마포동네 로고"
-            width={40}
-            height={40}
+            width={100}
+            height={100}
             className="w-full h-full"
           />
         </div>
@@ -98,15 +98,15 @@ function MobileNavContent() {
                           href={item.href}
                           className={`flex items-center px-4 py-2.5 text-[13px] transition-colors rounded-md group/item ${
                             isActive(item.href)
-                              ? 'text-[#2A7940] font-semibold'
-                              : 'text-gray-400 hover:text-[#419F5A]'
+                              ? 'text-gray-900 font-semibold'
+                              : 'text-gray-400 hover:text-gray-700'
                           }`}
                         >
                           <item.icon
                             className={`w-5 h-5 mr-4 transition-colors ${
                               isActive(item.href)
-                                ? 'text-[#2A7940] stroke-[2px]'
-                                : 'text-gray-300 group-hover/item:text-[#419F5A]'
+                                ? 'text-gray-900 stroke-[2px]'
+                                : 'text-gray-300 group-hover/item:text-gray-700'
                             }`}
                           />
                           {item.label}
@@ -120,9 +120,9 @@ function MobileNavContent() {
                     <SheetClose asChild>
                       <Link
                         href="/write"
-                        className="flex items-center px-4 py-2.5 text-[13px] transition-colors rounded-md group/item text-gray-400 hover:text-[#419F5A]"
+                        className="flex items-center px-4 py-2.5 text-[13px] transition-colors rounded-md group/item text-gray-400 hover:text-gray-700"
                       >
-                        <PenSquare className="w-5 h-5 mr-4 transition-colors text-gray-300 group-hover/item:text-[#419F5A]" />
+                        <PenSquare className="w-5 h-5 mr-4 transition-colors text-gray-300 group-hover/item:text-gray-700" />
                         글쓰기
                       </Link>
                     </SheetClose>
@@ -138,7 +138,7 @@ function MobileNavContent() {
                 <SheetClose asChild>
                   <Link
                     href="/profile"
-                    className="flex items-center px-4 py-2.5 text-[13px] hover:text-[#419F5A] transition-colors rounded-md group/item text-gray-400"
+                    className="flex items-center px-4 py-2.5 text-[13px] hover:text-gray-700 transition-colors rounded-md group/item text-gray-400"
                   >
                     <div className="w-5 h-5 rounded-full bg-gray-200 flex-shrink-0 overflow-hidden mr-4">
                       <Image

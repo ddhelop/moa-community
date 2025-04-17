@@ -68,7 +68,7 @@ export function PostCard({
         <div className={`flex-1 ${imageUrl ? 'pr-24' : ''}`}>
           <div className="flex items-start mb-2">
             {boardName && (
-              <span className="inline-block px-0.5 py-0 text-[10px] rounded-sm bg-[#419F5A]/10 text-[#419F5A] border border-[#419F5A]/20 mt-1.5 mr-1.5 whitespace-nowrap">
+              <span className="inline-block px-0.5 py-0 text-[10px] rounded-sm bg-gray-100 text-gray-700 border border-gray-200 mt-1.5 mr-1.5 whitespace-nowrap">
                 {boardName}
               </span>
             )}
